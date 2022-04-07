@@ -26,7 +26,8 @@ class PurchaseOrder(models.Model):
                 # the parent company. In this case, we keep the product name and code.
                 seller = line.product_id._select_seller(
                     partner_id=line.partner_id,
-                    quantity=line.product_qty,
+                    # quantity=line.product_qty,
+                    quantity = 10,
                     date=line.order_id.date_order and line.order_id.date_order.date(),
                     uom_id=line.product_uom)
                 if seller:
