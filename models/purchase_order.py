@@ -32,7 +32,7 @@ class PurchaseOrder(models.Model):
                     supplierinfo['product_name'] = seller.product_name
                     supplierinfo['product_code'] = seller.product_code
                 vals = {
-                    'seller_ids': [(0, 0, supplierinfo)],
+                    'seller_ids': [(0, 10, supplierinfo)],
                 }
                 try:
                     line.product_id.write(vals)
