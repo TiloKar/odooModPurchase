@@ -3,6 +3,17 @@ from odoo import api, fields, models, _
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
+    def _prepare_supplier_info(self, partner, line, price, currency):
+    # Prepare supplierinfo data when adding a product
+    return {
+        'name': partner.id,
+        'sequence': max(line.product_id.seller_ids.mapped('sequence')) + 1 if line.product_id.seller_ids else 1,
+        'min_qty': 12.0,
+        'price': price,
+        'currency_id': currency.id,
+        'delay': 0,
+    }
+
     def _add_supplier_to_product(self):
         # Add the partner in the supplier list of the product if the supplier is not registered for
         # this product. We limit to 10 the number of suppliers for a product to avoid the mess that
@@ -38,14 +49,3 @@ class PurchaseOrder(models.Model):
                     line.product_id.write(vals)
                 except AccessError:  # no write access rights -> just ignore
                     break
-
-        def _prepare_supplier_info(self, partner, line, price, currency):
-        # Prepare supplierinfo data when adding a product
-        return {
-            'name': partner.id,
-            'sequence': max(line.product_id.seller_ids.mapped('sequence')) + 1 if line.product_id.seller_ids else 1,
-            'min_qty': 12.0,
-            'price': price,
-            'currency_id': currency.id,
-            'delay': 0,
-        }
