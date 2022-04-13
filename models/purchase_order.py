@@ -38,3 +38,14 @@ class PurchaseOrder(models.Model):
                     line.product_id.write(vals)
                 except AccessError:  # no write access rights -> just ignore
                     break
+
+        def _prepare_supplier_info(self, partner, line, price, currency):
+        # Prepare supplierinfo data when adding a product
+        return {
+            'name': partner.id,
+            'sequence': max(line.product_id.seller_ids.mapped('sequence')) + 1 if line.product_id.seller_ids else 1,
+            'min_qty': 12.0,
+            'price': price,
+            'currency_id': currency.id,
+            'delay': 0,
+        }
