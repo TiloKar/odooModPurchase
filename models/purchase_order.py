@@ -5,10 +5,12 @@ class PurchaseOrder(models.Model):
 
     def _prepare_supplier_info(self, partner, line, price, currency):
         # Prepare supplierinfo data when adding a product
+        # EDIT_Hanning Liu
+        # min_qty wird auf line.product_qty gesetzt, fixxt die 0 in der Einkaufsübersicht
         return {
             'name': partner.id,
             'sequence': max(line.product_id.seller_ids.mapped('sequence')) + 1 if line.product_id.seller_ids else 1,
-            'min_qty': 12.0,
+            'min_qty': line.product_qty,
             'price': price,
             'currency_id': currency.id,
             'delay': 0,
@@ -21,6 +23,8 @@ class PurchaseOrder(models.Model):
         for line in self.order_line:
             # Do not add a contact as a supplier
             partner = self.partner_id if not self.partner_id.parent_id else self.partner_id.parent_id
+            # EDIT_Hanning_Liu
+            # Bedingung wird rausgenommen, sodass gleiche Lieferanten aufgezählt werden. Zusätzlich wird die Anzeigebedingung von 10 Zeilen ausgehoben
             if line.product_id:
                 # Convert the price in the right currency.
                 currency = partner.property_purchase_currency_id or self.env.company.currency_id
@@ -35,15 +39,14 @@ class PurchaseOrder(models.Model):
                 # the parent company. In this case, we keep the product name and code.
                 seller = line.product_id._select_seller(
                     partner_id=line.partner_id,
-                    # quantity=line.product_qty,
-                    quantity = 10,
+                    quantity = line.product_qty,
                     date=line.order_id.date_order and line.order_id.date_order.date(),
                     uom_id=line.product_uom)
                 if seller:
                     supplierinfo['product_name'] = seller.product_name
                     supplierinfo['product_code'] = seller.product_code
                 vals = {
-                    'seller_ids': [(0, 10, supplierinfo)],
+                    'seller_ids': [(0, 0, supplierinfo)],
                 }
                 try:
                     line.product_id.write(vals)
