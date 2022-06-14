@@ -14,13 +14,13 @@
         <t t-if="not company">
           <!-- Multicompany -->
           <t t-if="company_id">
-              <t t-set="company" t-value="company_id"/>
+            <t t-set="company" t-value="company_id"/>
           </t>
           <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
-              <t t-set="company" t-value="o.company_id.sudo()"/>
+            <t t-set="company" t-value="o.company_id.sudo()"/>
           </t>
           <t t-else="else">
-              <t t-set="company" t-value="res_company"/>
+            <t t-set="company" t-value="res_company"/>
           </t>
         </t>
         <div t-attf-class="header din_page o_company_#{company.id}_layout" t-att-style="''">
@@ -28,38 +28,38 @@
           <div style="position: absolute; top: 88px; left: 60mm; margin: 0; padding: 0; width: 200px; font-size: 20px;" t-field="company.report_header" />
         </div>
         <div t-attf-class="din_page invoice_note article o_company_#{company.id}_layout" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id">
-            <!--   kleiner briefkopf im header -->
+          <!--   kleiner briefkopf im header -->
 
-            <div style="
-              border-top: solid 1px #aaa;
-              margin-top: 1mm;
-              padding-top: 1mm;
-              border-bottom: solid 1px #aaa;
-              margin-bottom: 1mm;
-              padding-bottom: 1mm;
-              display:block;
-              width: 400px;
-              margin-left: 5mm;
-              ">
-              <t t-if="company.name">
-                <span t-field="company.name"/>
-              </t>
-              <t t-if="company.street">
-                <span>|</span> <span t-field="company.street"/>
-              </t>
-              <t t-if="company.street2">
-                <span>|</span> <span t-field="company.street2"/>
-              </t>
-              <t t-if="company.zip">
-                <span>|</span> <span t-field="company.zip"/>
-              </t>
-              <t t-if="company.city">
-                <span t-if="not company.zip">|</span> <span t-field="company.city"/>
-              </t>
-              <t t-if="company.country_id">
-                <span>|</span> <span t-field="company.country_id.name"/>
-              </t>
-            </div>
+          <div style="
+            border-top: solid 1px #aaa;
+            margin-top: 1mm;
+            padding-top: 1mm;
+            border-bottom: solid 1px #aaa;
+            margin-bottom: 1mm;
+            padding-bottom: 1mm;
+            display:block;
+            width: 400px;
+            margin-left: 5mm;
+            ">
+            <t t-if="company.name">
+              <span t-field="company.name"/>
+            </t>
+            <t t-if="company.street">
+              <span>|</span> <span t-field="company.street"/>
+            </t>
+            <t t-if="company.street2">
+              <span>|</span> <span t-field="company.street2"/>
+            </t>
+            <t t-if="company.zip">
+              <span>|</span> <span t-field="company.zip"/>
+            </t>
+            <t t-if="company.city">
+              <span t-if="not company.zip">|</span> <span t-field="company.city"/>
+            </t>
+            <t t-if="company.country_id">
+              <span>|</span> <span t-field="company.country_id.name"/>
+            </t>
+          </div>
 
           <!-- erste Ausgabe -->
           <!--t-att-data-oe-model und ff nötig für pdf ausgabe header  company_header-->
