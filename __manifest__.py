@@ -16,13 +16,16 @@
   'depends': [
     'base',
     'purchase',
+    'purchase_stock',
   ],
   'data': [
     'views/bbi_csv_webshop.xml',
     'views/res_partner_supplier_extrainfo_view.xml',
     'report/bbi_report_purchasequotation.xml',
-    #'report/bbi_report_purchasequotation_document_erweiterung.xml',
-    'report/bbi_report_purchaseorder_document.xml',
     'report/bbi_report_purchasequotation_document.xml',
+    'report/bbi_report_purchasequotation_document_erweiterung.xml',
+    'report/bbi_report_purchaseorder_document.xml',
+
+
   ],
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
-    <template id="purchase_stock.report_purchasequotation_document">
+  <data >
+    <template id="purchase_stock.report_purchasequotation_document" inherit_id="purchase.report_purchasequotation_document">
       <span>dummy</span>
     </template>
   </data>
