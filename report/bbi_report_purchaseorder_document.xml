@@ -225,9 +225,7 @@
 
             <div class="oe_structure"/>
 
-            <!-- workaround, damit übersetzung nicht entfernt werden muss -->
-            <t t-if="o.dest_address_id"/>
-            <t t-if="o.date_order" class="col-3 bm-2"/>
+            
           </div>
 
           <!-- Footer -->
