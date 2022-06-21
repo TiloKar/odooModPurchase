@@ -230,7 +230,7 @@
             <t t-if="o.date_order" class="col-3 bm-2"/>
           </div>
 
-          <!-- Footer-->
+          <!-- Footer -->
           <div t-attf-class="din_page footer o_company_#{company.id}_layout">
             <div class="text-right page_number">
               <div class="text-muted">
