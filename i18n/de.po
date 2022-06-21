@@ -1,0 +1,55 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-21 14:51+0000\n"
+"PO-Revision-Date: 2022-06-21 14:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase
+#: model:ir.actions.report,print_report_name:purchase.action_report_purchase_order
+msgid ""
+"\n"
+"                (object.state in ('draft', 'sent') and 'Request for Quotation - %s' % (object.name) or\n"
+"                'Purchase Order - %s' % (object.name))"
+msgstr ""
+"\n"
+"                (object.state in ('draft', 'sent') and 'Bestellung - %s' % (object.name) or\n"
+"                'Bestellung - %s' % (object.name))"
+
+#. module: purchase
+#: code:addons/purchase/controllers/portal.py:0
+#: code:addons/purchase/models/purchase.py:0
+#: code:addons/purchase/models/purchase.py:0
+#: model:ir.actions.report,name:purchase.action_report_purchase_order
+#: model:ir.model,name:purchase.model_purchase_order
+#: model:ir.model.fields,field_description:purchase.field_account_bank_statement_linepurchase_id
+#: model:ir.model.fields,field_description:purchase.field_account_movepurchase_id
+#: model:ir.model.fields,field_description:purchase.field_account_move_linepurchase_order_id
+#: model:ir.model.fields,field_description:purchase.field_account_paymentpurchase_id
+#: model:ir.model.fields,field_description:purchase.field_purchase_bill_unionpurchase_order_id
+#: model:ir.model.fields,field_description:purchase.field_res_partnerpurchase_warn
+#: model:ir.model.fields,field_description:purchase.field_res_userspurchase_warn
+#: model:ir.model.fields.selection,name:purchase.selectionpurchase_orderstatepurchase
+#: model:ir.model.fields.selection,name:purchase.selectionpurchase_reportstate__purchase
+#: model_terms:ir.ui.view,arch_db:purchase.purchase_order_form
+#: model_terms:ir.ui.view,arch_db:purchase.purchase_order_graph
+#: model_terms:ir.ui.view,arch_db:purchase.purchase_order_kpis_tree
+#: model_terms:ir.ui.view,arch_db:purchase.purchase_order_pivot
+#: model_terms:ir.ui.view,arch_db:purchase.purchase_order_portal_content
+#: model_terms:ir.ui.view,arch_db:purchase.purchase_order_tree
+#: model_terms:ir.ui.view,arch_db:purchase.purchase_order_view_activity
+#: model_terms:ir.ui.view,arch_db:purchase.purchase_order_view_tree
+#: model_terms:ir.ui.view,arch_db:purchase.report_purchaseorder_document
+#, python-format
+msgid "Purchase Order"
+msgstr "Bestellung"
