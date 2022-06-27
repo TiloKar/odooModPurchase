@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="purchaseorder_form_bbi" model="ir.ui.view">
+    <field name="name">purchase.order.form.bbi</field>
+    <field name="model">purchase.order</field>
+    <field name="inherit_id" ref="purchase.purchase_order_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='date_approve']" position="replace">
+        <field name="date_approve" attrs="{'readonly': [('state', 'not in', ('draft', 'sent', 'to approve', 'purchase'))]}"/>
+      </xpath>
+    </field>
+  </record>
+</odoo>
