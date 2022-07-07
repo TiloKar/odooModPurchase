@@ -22,6 +22,7 @@
     'views/bbi_csv_webshop.xml',
     'views/res_partner_supplier_extrainfo_view.xml',
     'views/purchase_order_form_bbi.xml',
+    'views/product_template_form_supplier_bbi.xml',
     'report/bbi_report_purchasequotation_document_erweiterung.xml',
     'report/bbi_report_purchaseorder_document_erweiterung.xml',
     'report/bbi_report_purchasequotation.xml',
