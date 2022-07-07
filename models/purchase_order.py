@@ -3,6 +3,11 @@ from odoo import api, fields, models, _
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
+    bbi_vendor_confirmation_date = fields.Datetime('Lief. Bestätigungsdatum',
+        help='Das Datum, an der Lieferant die Bestellung bestätigt hat - AB',
+        store=True,
+        readonly=False)
+
     def _prepare_supplier_info(self, partner, line, price, currency):
         # Prepare supplierinfo data when adding a product
         # EDIT_Hanning Liu
