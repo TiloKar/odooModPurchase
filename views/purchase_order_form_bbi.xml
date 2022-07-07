@@ -13,6 +13,10 @@
       <xpath expr="//div[@name='date_approve']" position="after">
         <field name='bbi_vendor_confirmation_date' string='Lief. Bestätigung'/>
       </xpath>
+
+      <xpath expr="//tree/field[@name='product_id']" position="after">
+        <field name='product_code' string='Artikelnr. beim Lief.'/>
+      </xpath>
     </field>
   </record>
 </odoo>
