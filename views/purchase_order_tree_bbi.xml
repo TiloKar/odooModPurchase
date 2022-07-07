@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="purchaseorder_tree_bbi" model="ir.ui.view">
+    <field name="name">purchase.order.tree.bbi</field>
+    <field name="model">purchase.order</field>
+    <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='date_approve']" position="replace">
+        <field name='date_approve' string='von bbi bestellt am' optional="show"/>
+      </xpath>
+      <xpath expr="//field[@name='date_approve']" position="after">
+        <field name='bbi_vendor_confirmation_date' optional="show" string='Lief. Bestätigung'/>
+      </xpath>
+    </field>
+  </record>
+</odoo>

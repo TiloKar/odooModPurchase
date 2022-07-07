@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="stock_picking_tree_bbi" model="ir.ui.view">
+    <field name="name">stock.picking.tree.bbi</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock.vpicktree"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='origin']" position="after">
+        <field name='external_origin' optional="show"/>
+      </xpath>
+      <xpath expr="//field[@name='origin']" position="replace">
+        <field name='origin' optional="show" string='interner Ursprung'/>
+      </xpath>
+    </field>
+  </record>
+</odoo>
