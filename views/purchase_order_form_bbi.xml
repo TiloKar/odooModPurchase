@@ -8,6 +8,10 @@
       <xpath expr="//field[@name='date_approve']" position="replace">
         <field name="date_approve" attrs="{'readonly': [('state', 'not in', ('draft', 'sent', 'to approve', 'purchase'))]}"/>
       </xpath>
+      <!--Edit: Hanning Liu - Zusatz Vendor Confirmation Date bbi_purchase_order_vendor_confirmation-->
+      <xpath expr="//field[@name='date_order']" position="after">
+        <field name='vendor_confirmation_date' string='Lief. Bestätigung'/>
+      </xpath>
     </field>
   </record>
 </odoo>
