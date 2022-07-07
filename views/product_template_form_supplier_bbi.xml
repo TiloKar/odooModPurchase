@@ -6,14 +6,17 @@
     <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
     <field name="arch" type="xml">
       <xpath expr="//field[@name='product_code']" position="attributes">
-        <attribute name="string">Lieferanten Bestellnummer</attribute>
+        <attribute name="string">Artikelnr. beim Lief.</attribute>
         <attribute name="optional">show</attribute>
       </xpath>
       <xpath expr="//field[@name='product_name']" position="attributes">
         <attribute name="invisible">1</attribute>
       </xpath>
       <xpath expr="//field[@name='delay']" position="after">
-        <button string="Standard" type="object" name="action_open_make_standard" help="Setzt diesen Lieferanten als Standard für automatische Bestellungen"/>
+        <button string="Standard" type="object"
+          name="action_open_make_standard"
+          help="Setzt diesen Lieferanten als Standard für automatische Bestellungen"
+          context="{'sequence_action_clicked_id': id}"/>
       </xpath>
     </field>
   </record>
