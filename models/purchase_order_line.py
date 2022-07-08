@@ -14,7 +14,7 @@ class PurchaseOrderLine(models.Model):
         self.ensure_one()
 
         seller = self.product_id.with_company(1)._select_seller(
-            partner_id=self.partner_id.id,
+            partner_id=self.partner_id,
             quantity=self.product_uom_qty,
             date=self.order_id.date_order and self.order_id.date_order.date(),
             uom_id=self.product_id.uom_po_id)

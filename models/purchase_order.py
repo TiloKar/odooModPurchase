@@ -12,9 +12,18 @@ class PurchaseOrder(models.Model):
         # Prepare supplierinfo data when adding a product
         # EDIT_Hanning Liu
         # min_qty wird auf line.product_qty gesetzt, fixxt die 0 in der Einkaufsübersicht
+        # ergänzung tk sequence swap, damit letzter einkaufsvorgang default wird
+
+        toSwap = self.env['product.supplierinfo'].search([('product_tmpl_id','=',line.product_id.product_tmpl_id.id),('sequence','=',1)])
+        if len(toSwap) > 0:
+            newSeq = max(line.product_id.seller_ids.mapped('sequence')) + 1 if line.product_id.seller_ids else 1
+            print("changing sequnce supplierinfo {} to {}".format(toSwap[0].id,newSeq))
+            toSwap[0].update({'sequence' : newSeq})
+
         return {
             'name': partner.id,
-            'sequence': max(line.product_id.seller_ids.mapped('sequence')) + 1 if line.product_id.seller_ids else 1,
+            #'sequence': max(line.product_id.seller_ids.mapped('sequence')) + 1 if line.product_id.seller_ids else 1,
+            'sequence': 1,
             'min_qty': line.product_qty,
             'price': price,
             'currency_id': currency.id,
@@ -50,6 +59,10 @@ class PurchaseOrder(models.Model):
                 if seller:
                     supplierinfo['product_name'] = seller.product_name
                     supplierinfo['product_code'] = seller.product_code
+                #bbi mod:       neue productcodes hier übernehmen
+                if line.product_code:
+                    supplierinfo['product_code'] = line.product_code
+
                 vals = {
                     'seller_ids': [(0, 0, supplierinfo)],
                 }
