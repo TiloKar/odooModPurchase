@@ -148,10 +148,12 @@
               <thead style="display: table-row-group" t-att-style="'background:#D3D3D3;'">
                 <!-- Spaltennamen -->
                 <tr>
+                  <th name="th_quantity" class="text-right"><strong>Quantity</strong></th>
+                  <th name="th_our_code"><strong>Our Code</strong></th>
+                  <th name="th_your_code"><strong>Your Code</strong></th>
                   <th name="th_description"><strong>Description</strong></th>
                   <th name="th_taxes" width="100" ><strong>Taxes</strong></th>
                   <th name="th_date_req" class="text-center"><strong>Date</strong></th>
-                  <th name="th_quantity" class="text-right"><strong>Quantity</strong></th>
                   <th name="th_price_unit" class="text-right"><strong>Unit Price</strong></th>
                   <th name="th_amount" class="text-right"><strong>Amount</strong></th>
                 </tr>
@@ -165,6 +167,16 @@
                   <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
                     <t t-if="not line.display_type">
                       <!--Zeileninhalt-->
+                      <td class="text-right">
+                        <span t-field="line.product_qty"/>
+                        <span t-field="line.product_uom.name" groups="uom.group_uom"/>
+                      </td>
+                      <td id="our_code">
+                        <span t-field="line.product_id.default_code"/>
+                      </td>
+                      <td id="your_code">
+                        <span t-field="line.product_code"/>
+                      </td>
                       <td id="product">
                         <span t-field="line.name"/>
                       </td>
@@ -173,10 +185,6 @@
                       </td>
                       <td class="text-center">
                         <span t-field="line.date_planned" t-options="{'widget': 'date'}"/>
-                      </td>
-                      <td class="text-right">
-                        <span t-field="line.product_qty"/>
-                        <span t-field="line.product_uom.name" groups="uom.group_uom"/>
                       </td>
                       <td class="text-right">
                         <span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.currency_id}"/>
@@ -198,6 +206,14 @@
                       </td>
                     </t>
                   </tr>
+                  <!--  jetzt als separate zeile darunter-->
+                  <!--tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                    <td id="product">
+                      <span t-field="line.name"/>
+                    </td>
+                  </tr-->
+
+
                   <t t-if="current_section and (line_last or o.order_line[line_index+1].display_type == 'line_section')">
                     <tr class="is-subtotal text-right">
                       <td colspan="99" id="subtotal">
@@ -225,7 +241,7 @@
 
             <div class="oe_structure"/>
 
-            
+
           </div>
 
           <!-- Footer -->

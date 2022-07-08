@@ -24,7 +24,10 @@ class PurchaseOrderLine(models.Model):
                 self.product_code = seller.product_code
 
         #name = product_lang.display_name
-        name = " "
+        name=""
+        if product_lang.name:
+            name = product_lang.name
+        name += " "
         if product_lang.description_purchase:
             name += '\n' + product_lang.description_purchase
 
