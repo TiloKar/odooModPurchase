@@ -2,7 +2,7 @@ from odoo import api, fields, models
 
 class SupplierInfo(models.Model):
     _inherit = 'product.supplierinfo'
-    #tauscht die supplierinfo in der reihenfolge
+    #tauscht die supplierinfo in der reihenfolge, LEGACY
     def action_open_make_standard(self):
         if self._context.get('sequence_action_clicked_id'):
             me = self.env['product.supplierinfo'].search([('id','=',self._context.get('sequence_action_clicked_id')),])
