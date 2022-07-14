@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <record id="purchaseorder_tree_bbi" model="ir.ui.view">
-    <field name="name">purchase.order.tree.bbi</field>
-    <field name="model">purchase.order</field>
-    <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
-    <field name="arch" type="xml">
-      <xpath expr="//field[@name='date_approve']" position="replace">
-        <field name='date_approve' string='von bbi bestellt am' optional="show"/>
-      </xpath>
-      <xpath expr="//field[@name='date_approve']" position="after">
-        <field name='bbi_vendor_confirmation_date' optional="show" string='Lief. Bestätigung'/>
-        <field name="date_planned" string="geplantes Lieferdatum" optional = "show" />
-      </xpath>
-    </field>
-  </record>
+      <record id="purchaseorder_tree_bbi" model="ir.ui.view">
+            <field name="name">purchase.order.tree.bbi</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+            <field name="arch" type="xml">
+                <tree position="replace">"
+                    <tree string="Purchase Order" decoration-info="state in ['draft', 'sent']" default_order="date_planned desc" decoration-muted="state == 'cancel'" decoration-bf="message_unread==True" class="o_purchase_order" js_class="purchase_list_dashboard" sample="1">
+                        <header>
+                            <button name="action_create_invoice" type="object" string="Create Bills"/>
+                        </header>
+                        <field name="priority" optional="show" widget="priority" nolabel="1"/>
+                        <field name="message_unread" invisible="1"/>
+                        <field name="partner_ref" optional="show"/>
+                        <field name="name" string="Reference" readonly="1" decoration-bf="1"/>
+                        <field name='date_approve' string='von bbi bestellt am' optional="show"/>
+                        <field name='bbi_vendor_confirmation_date' optional="show" string='Lief. Bestätigung'/>
+                        <field name="date_planned" string="geplantes Lieferdatum" optional = "show" />
+                        <field name="partner_id" readonly="1"/>
+                        <field name="company_id" readonly="1" options="{'no_create': True}" groups="base.group_multi_company" optional="show"/>
+                        <field name="user_id" optional="show" widget="many2one_avatar_user"/>
+                        <field name="date_order" attrs="{'invisible': ['|', '|', ('state', '=', 'purchase'), ('state', '=', 'done'), ('state', '=', 'cancel')]}" invisible="not context.get('quotation_only', False)" widget="remaining_days" optional="show"/>
+                        <field name="activity_ids" widget="list_activity" optional="show"/>
+                        <field name="origin" optional="show"/>
+                        <field name="amount_untaxed" sum="Total Untaxed amount" string="Untaxed" widget="monetary" optional="hide"/>
+                        <field name="amount_total" sum="Total amount" widget="monetary" optional="show" decoration-bf="state in ['purchase', 'done']"/>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="state" optional="show" widget="badge" decoration-success="state == 'purchase' or state == 'done'" decoration-warning="state == 'to approve'" decoration-info="state == 'draft' or state == 'sent'"/>
+                        <field name="invoice_status" optional="hide"/>
+                    </tree>
+                </tree>
+            </field>
+      </record>
 </odoo>
