@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="request_quotation_select_bbi" model="ir.ui.view">
+        <field name="name">request.quotation.select.bbi</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="replace"/>
+            <xpath expr="//field[@name='partner_id']" position="replace"/>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="product_id" string="Produkte"/>
+                <field name="partner_id" operator="child_of" string="Lieferant"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="replace">
+                 <field name="name" string="Bestellnummer" filter_domain="['|', '|', ('name', 'ilike', self), ('partner_ref', 'ilike', self), ('partner_id', 'child_of', self)]"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                 <field name="order_line" string="Artikelnummer beim Lieferanten" filter_domain="[('order_line.product_code', 'ilike', self)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

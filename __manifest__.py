@@ -32,5 +32,6 @@
     'report/bbi_report_purchasequotation_document.xml',
     'report/bbi_report_purchaseorder.xml',
     'report/bbi_report_purchaseorder_document.xml',
+    'views/request_quotation_select_bbi.xml',
   ],
 }
