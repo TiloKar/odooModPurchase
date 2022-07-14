@@ -5,6 +5,7 @@
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
         <field name="arch" type="xml">
+            <!--Filter und Suchfeld für Purchase-->
             <xpath expr="//field[@name='product_id']" position="replace"/>
             <xpath expr="//field[@name='partner_id']" position="replace"/>
             <xpath expr="//field[@name='name']" position="before">
