@@ -10,6 +10,7 @@
       </xpath>
       <xpath expr="//field[@name='date_approve']" position="after">
         <field name='bbi_vendor_confirmation_date' optional="show" string='Lief. Bestätigung'/>
+        <field name="date_planned" string="geplantes Lieferdatum" optional = "show" />
       </xpath>
     </field>
   </record>
