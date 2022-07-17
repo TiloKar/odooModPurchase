@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="minified_purchasequotation">
+    <t t-call="bbi_mod_sale.external_layout_bbi">
+      <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+      <t t-set="forced_vat" t-value="doc.fiscal_position_id.foreign_vat"/> <!-- So that it appears in the footer of the report instead of the company VAT if it's set -->
+      <t t-set="address">
+        <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
+        <p t-if="doc.partner_id.vat"><t t-esc="doc.company_id.account_fiscal_country_id.vat_label or 'Tax ID'"/>: <span t-field="doc.partner_id.vat"/></p>
+      </t>
+      <!-- Variablen aus call in external layout -->
+      <t t-if="not o" t-set="o" t-value="doc"/>
+      <t t-if="not company">
+        <!-- Multicompany -->
+        <t t-if="company_id">
+          <t t-set="company" t-value="company_id"/>
+        </t>
+        <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+          <t t-set="company" t-value="o.company_id.sudo()"/>
+        </t>
+        <t t-else="else">
+          <t t-set="company" t-value="res_company"/>
+        </t>
+      </t>
+
+      <!--   adressblock -->
+      <div class="page">
+        <table style="margin-left: 0mm;">
+          <tr>
+            <!-- beide adressen-->
+            <td style="vertical-align: top;">
+              <div style="width: 330px;">
+                <div t-field="doc.partner_id.name" />
+                <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [ &quot;address&quot;, ], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}" t-att-style="'margin-bottom: 10px'"/>
+              </div>
+              <strong>Shipping Address:</strong>
+              <div>
+                <t t-if="company.name">
+                  <div t-field="company.name"/>
+                </t>
+                <t t-if="company.street">
+                  <div t-field="company.street"/>
+                </t>
+                <t t-if="company.street2">
+                  <div t-field="company.street2"/>
+                </t>
+                <t t-if="company.zip">
+                  <span t-field="company.zip"/>
+                </t>
+                <t t-if="company.city">
+                  <span t-if="not company.zip">|</span> <span t-field="company.city"/>
+                </t>
+                <t t-if="company.country_id">
+                  <div t-field="company.country_id.name"/>
+                </t>
+              </div>
+            </td>
+            <td style="vertical-align: top;">
+              <table>
+                <tr>
+                  <td style="width: 140px;"><strong>Number</strong></td>
+                  <td><div t-field="doc.name"/></td>
+                </tr>
+                <tr>
+                  <td><strong>Date</strong></td>
+                  <td><div t-field="doc.date_order" t-options="{'widget': 'date'}"/></td>
+                </tr>
+                <tr t-if="doc.partner_ref">
+                  <td><strong>PO no.</strong></td>
+                  <td>
+                    <div t-field="doc.partner_ref"/>
+                  </td>
+                </tr>
+                <tr t-if="doc.partner_id.supplier_our_id_customer">
+                  <td><strong>Customer no.</strong></td>
+                  <td>
+                    <div t-field="doc.partner_id.supplier_our_id_customer"/>
+                  </td>
+                </tr>
+                <tr t-if="doc.user_id.name">
+                  <td><strong>Contact</strong></td>
+                  <td><div t-field="doc.user_id.name"/></td>
+                </tr>
+                <tr t-if="doc.user_id.email">
+                  <td><strong>Email</strong></td>
+                  <td><div t-field="doc.user_id.email"/></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Überschrift -->
+        <h2 style="   margin-top: 15mm;
+                      margin-bottom: 15mm;
+                      text-color: #000">
+          <span t-if="doc.state in ['draft', 'sent', 'to approve']">Purchase Order</span>
+          <span t-if="doc.state in ['purchase', 'done']">Purchase Order</span>
+          <span t-if="doc.state == 'cancel'">Cancelled Purchase Order</span>
+        </h2>
+
+        <p>
+          <br>Dear Sir or Madam,</br>
+          <br>We would like to request a quotation with delivery time for the following products:</br>
+        </p>
+        <!-- Purchaseorder body-->
+        <table class="table table-sm o_main_table" style="border-top: 2px solid #808080; border-right: 2px solid #808080; border-bottom: 2px solid #808080; border-left: 2px solid #808080;">
+          <thead style="display: table-row-group" t-att-style="'background:#D3D3D3;'">
+            <!-- Spaltennamen -->
+            <tr>
+              <th name="th_quantity" class="text-right"><strong>Quantity</strong></th>
+              <th name="th_our_code"><strong>Our Code</strong></th>
+              <th name="th_your_code"><strong>Your Code</strong></th>
+              <th name="th_description"><strong>Description</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <t t-foreach="o.order_line" t-as="order_line">
+              <tr t-att-class="'bg-200 font-weight-bold o_line_section' if order_line.display_type == 'line_section' else 'font-italic o_line_note' if order_line.display_type == 'line_note' else ''">
+                <t t-if="not order_line.display_type">
+                  <td class="text-right">
+                    <span t-field="order_line.product_qty"/>
+                    <span t-field="order_line.product_uom.name" groups="uom.group_uom"/>
+                  </td>
+                  <td id="our_code">
+                    <span t-field="order_line.product_id.default_code"/>
+                  </td>
+                  <td id="your_code">
+                    <span t-field="order_line.product_code"/>
+                  </td>
+                  <td id="product">
+                    <span t-field="order_line.name"/>
+                  </td>
+                </t>
+                <t t-else="">
+                  <td colspan="99" id="section">
+                    <span t-field="order_line.name"/>
+                  </td>
+                </t>
+              </tr>
+            </t>
+          </tbody>
+        </table>
+
+        <!-- Notizen -->
+        <p><strong> Further information: </strong></p>
+        <span t-field="o.notes"/>
+      </div>
+    </t>
+  </template>
+</odoo>
