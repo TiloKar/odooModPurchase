@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase.action_report_purchase_order" model="ir.actions.report">
+            <field name="paperformat_id" ref="bbi_mod_sale.paperformat_euro_din_bbi" />
+        </record>
+        <record id="purchase.report_purchase_quotation" model="ir.actions.report">
+            <field name="paperformat_id" ref="bbi_mod_sale.paperformat_euro_din_bbi" />
+        </record>
+  </data>
+</odoo>

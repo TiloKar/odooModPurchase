@@ -29,9 +29,10 @@
     #'report/bbi_report_purchasequotation_document_erweiterung.xml',
     #'report/bbi_report_purchaseorder_document_erweiterung.xml',
     'report/minified_purchasequotation.xml',
-    'report/bbi_report_purchasequotation.xml',
     'report/minified_purchaseorder.xml',
+    'report/bbi_report_purchasequotation.xml',
     'report/bbi_report_purchaseorder.xml',
+    'report/change_paperformat.xml',
     'views/request_quotation_select_bbi.xml',
   ],
 }
