@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-18 12:31+0000\n"
-"PO-Revision-Date: 2022-07-18 12:31+0000\n"
+"POT-Creation-Date: 2022-07-18 13:22+0000\n"
+"PO-Revision-Date: 2022-07-18 13:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,16 +20,14 @@ msgstr ""
 msgid ""
 "<br>Dear Sir or Madam,</br>\n"
 "          <br>We hereby order the following items. Please provide us with an order confirmation stating the delivery time. We also require the HS No. and the origin of the goods on the delivery bill.</br>"
-msgstr "<br>Sehr geehrte Damen und Herren,</br>"
-"<br>hiermit bestellen wir folgende Artikel und bitten um eine Auftragsbestätigung mit Angabe der Lieferzeit. Bitte geben Sie auf dem Lieferschein die HS-Nr. und den Warenursprung an.</br>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid ""
 "<br>Dear Sir or Madam,</br>\n"
 "          <br>We would like to request a quotation with delivery time for the following products:</br>"
-msgstr "<br>Sehr geehrte Damen und Herren, </br>"
-          "<br>hiermit bitten wir um ein Angebot mit Angabe der Lieferzeit für folgende Produkte: </br>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
@@ -40,36 +38,36 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong> Further information: </strong>"
-msgstr "Weitere Informationen"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 msgid "<strong>Amount</strong>"
-msgstr "<strong>Betrag</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong>Contact</strong>"
-msgstr "<strong>Kontakt</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong>Customer no.</strong>"
-msgstr "<strong>Kundennr.</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong>Date</strong>"
-msgstr "<strong>Datum</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong>Description</strong>"
-msgstr "<strong>Beschreibung</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
@@ -81,19 +79,19 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong>Number</strong>"
-msgstr "<strong>Nummer</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong>Our Code</strong>"
-msgstr "<strong>Unsere Nr.</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong>PO no.</strong>"
-msgstr "<strong>Unsere Referenz</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
@@ -104,77 +102,77 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong>Quantity</strong>"
-msgstr "<strong>Anz.</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong>Shipping Address:</strong>"
-msgstr "<strong>Lieferadresse:</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 msgid "<strong>Taxes</strong>"
-msgstr "<strong>Steuern</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 msgid "<strong>Unit Price</strong>"
-msgstr "<strong>Einzelpreis</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong>Your Code</strong>"
-msgstr "<strong>Ihre Nr.</strong>"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model:ir.model.fields,field_description:bbi_mod_purchase.field_purchase_order_line__product_code
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.product_supplierinfo_tree_bbi
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_form_bbi
 msgid "Artikelnr. beim Lief."
-msgstr ""
+msgstr "Article nb. Vendor"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.request_quotation_select_bbi
 msgid "Artikelnummer beim Lieferanten"
-msgstr ""
+msgstr "Article nb. Vendor"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.request_quotation_select_bbi
 msgid "Bestellnummer"
-msgstr ""
+msgstr "Order nb."
 
 #. module: bbi_mod_purchase
 #: model:ir.model.fields,help:bbi_mod_purchase.field_purchase_order_line__product_code
 msgid "Bestellnummer beim Lieferanten"
-msgstr ""
+msgstr "Order nb. Vendor"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.bbi_csv_webshop
 msgid "CSV-Datei"
-msgstr ""
+msgstr "csv-file"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.bbi_csv_webshop
 msgid "CSV-Datei generieren"
-msgstr ""
+msgstr "generate csv-file"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "Cancelled Purchase Order"
-msgstr "Abgebrochener Bestellvorgang"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model:ir.model,name:bbi_mod_purchase.model_res_partner
 msgid "Contact"
-msgstr "Kontakt"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_tree_bbi
 msgid "Create Bills"
-msgstr "Rechnung erzeugen"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model:ir.model.fields,field_description:bbi_mod_purchase.field_purchase_order__csvdata
@@ -189,34 +187,34 @@ msgstr ""
 #. module: bbi_mod_purchase
 #: model:ir.model.fields,help:bbi_mod_purchase.field_purchase_order__bbi_vendor_confirmation_date
 msgid "Das Datum, an der Lieferant die Bestellung bestätigt hat - AB"
-msgstr ""
+msgstr "Vendors confirmation date for order"
 
 #. module: bbi_mod_purchase
 #: model:ir.model.fields,field_description:bbi_mod_purchase.field_res_partner__supplier_our_id_customer
 #: model:ir.model.fields,field_description:bbi_mod_purchase.field_res_users__supplier_our_id_customer
 msgid "Kundennummer vom Lieferanten"
-msgstr ""
+msgstr "Customer nb. Vendor"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_form_bbi
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_tree_bbi
 msgid "Lief. Bestätigung"
-msgstr ""
+msgstr "order confirmation"
 
 #. module: bbi_mod_purchase
 #: model:ir.model.fields,field_description:bbi_mod_purchase.field_purchase_order__bbi_vendor_confirmation_date
 msgid "Lief. Bestätigungsdatum"
-msgstr ""
+msgstr "order confirmation"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.request_quotation_select_bbi
 msgid "Lieferant"
-msgstr ""
+msgstr "Vendor"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.request_quotation_select_bbi
 msgid "Produkte"
-msgstr ""
+msgstr "Products"
 
 #. module: bbi_mod_purchase
 #: model:ir.model,name:bbi_mod_purchase.model_purchase_order
@@ -224,69 +222,69 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_tree_bbi
 msgid "Purchase Order"
-msgstr "Bestellung"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model:ir.model,name:bbi_mod_purchase.model_purchase_order_line
 msgid "Purchase Order Line"
-msgstr "Bestellposition"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_tree_bbi
 msgid "Reference"
-msgstr "Referenz"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model:ir.model.fields,field_description:bbi_mod_purchase.field_res_partner__supplier_extrainfo
 #: model:ir.model.fields,field_description:bbi_mod_purchase.field_res_users__supplier_extrainfo
 msgid "Steuernr. Finanzamt"
-msgstr ""
+msgstr "Viscal ID"
 
 #. module: bbi_mod_purchase
 #: model:ir.model,name:bbi_mod_purchase.model_product_supplierinfo
 msgid "Supplier Pricelist"
-msgstr "Lieferantenpreisliste"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_tree_bbi
 msgid "Total Untaxed amount"
-msgstr "Summe ohne Steuer"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_tree_bbi
 msgid "Total amount"
-msgstr "Summe"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_tree_bbi
 msgid "Untaxed"
-msgstr "Ohne Steuer"
+msgstr ""
 
 #. module: bbi_mod_purchase
 #: model:ir.model.fields,help:bbi_mod_purchase.field_res_partner__supplier_our_id_customer
 #: model:ir.model.fields,help:bbi_mod_purchase.field_res_users__supplier_our_id_customer
 msgid "bbi_Kundennummer_vom_Lieferanten"
-msgstr ""
+msgstr "our nb. Vendor"
 
 #. module: bbi_mod_purchase
 #: model:ir.model.fields,help:bbi_mod_purchase.field_res_partner__supplier_extrainfo
 #: model:ir.model.fields,help:bbi_mod_purchase.field_res_users__supplier_extrainfo
 msgid "bbi_steuernr_finanzamt"
-msgstr ""
+msgstr "bbi viscal id"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_tree_bbi
 msgid "geplantes Lieferdatum"
-msgstr ""
+msgstr "date planned"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.stock_picking_form_bbi
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.stock_picking_tree_bbi
 msgid "interner Ursprung"
-msgstr ""
+msgstr "internal origin"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_form_bbi
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.purchaseorder_tree_bbi
 msgid "von bbi bestellt am"
-msgstr ""
+msgstr "ordered by bbi"
