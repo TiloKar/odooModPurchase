@@ -11,6 +11,15 @@
             <xpath expr="//page[@name='sales_purchases']//field[@name='ref']" position="after">
                 <field name='supplier_our_id_customer'/>
             </xpath>
+            <xpath expr="//page[@name='sales_purchases']//field[@name='ref']" position="replace">
+                <field name="ref" string="Lieferantennummer"/>
+                <field name="supplier_rank" invisible="1"/>
+                <button name="generateSupplierRef"
+                    string="Neue Lieferantennummer" type="object"
+                    attrs="{'invisible': ['|', ('ref', '!=', False), ('supplier_rank', '=', 0)]}"
+                    help="vergibt die nächst höher Lieferantennummer"
+                    class="oe_link oe_read_only pt-0"/>
+            </xpath>
         </field>
     </record>
 </odoo>
