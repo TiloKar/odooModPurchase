@@ -40,7 +40,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchasequotation
 msgid "<strong> Further information: </strong>"
-msgstr "Weitere Informationen"
+msgstr "Weitere Informationen:"
 
 #. module: bbi_mod_purchase
 #: model_terms:ir.ui.view,arch_db:bbi_mod_purchase.minified_purchaseorder

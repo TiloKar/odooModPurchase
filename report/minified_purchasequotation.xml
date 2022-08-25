@@ -66,7 +66,7 @@
                   <td><div t-field="doc.date_order" t-options="{'widget': 'date'}"/></td>
                 </tr>
                 <tr t-if="doc.partner_ref">
-                  <td><strong>PO no.</strong></td>
+                  <td><strong>Supplier ref.</strong></td>
                   <td>
                     <div t-field="doc.partner_ref"/>
                   </td>
